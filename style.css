@@ -1,0 +1,207 @@
+/* === 全域設定 === */
+body {
+    /* 使用標準字體：微軟正黑體 */
+    font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+    /* 夢幻馬卡龍漸層背景 */
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* === 主容器卡片 === */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(161, 196, 253, 0.3);
+    width: 90%;        /* 在手機上佔據 90% 寬度，保留一點邊距 */
+    max-width: 380px;  /* 在電腦上最大只會到 380px，不會變巨無霸 */
+    text-align: center;
+    border: 3px solid #fff;
+}
+
+h1 {
+    color: #5a8dee;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+/* === 搜尋區域 === */
+.search-box {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+    background: #f0f7ff;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+input {
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    flex: 1;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #ff9a9e;
+    background-image: linear-gradient(to right, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 80px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+}
+
+button:disabled {
+    background: #ccc;
+    background-image: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* === 天氣資訊區 === */
+.weather-card {
+    margin-top: 20px;
+    animation: popUp 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.weather-icon-container img {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+}
+
+.temp-box {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #5a8dee;
+    margin: -10px 0 5px 0;
+}
+
+.weather-desc {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+    background: #eef6ff;
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* === 穿搭建議框 === */
+.outfit-box {
+    background-color: #fff3cd;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: 2px dashed #ffeeba;
+}
+
+.outfit-box h3 {
+    color: #dda600;
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.outfit-box p {
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+/* === 未來預報區域 === */
+.forecast-section {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.forecast-section h3 {
+    font-size: 1.1rem;
+    color: #5a8dee;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+/* 預報小卡片 */
+.forecast-item {
+    background: #fff;
+    padding: 10px 5px;
+    border-radius: 12px;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #eef6ff;
+    flex: 1;
+    /* 讓內容垂直居中排列 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.forecast-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* 高低溫樣式 */
+.forecast-temp {
+    font-size: 0.9rem;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.high-temp { color: #ff6b6b; font-weight: bold; }
+.low-temp { color: #5a8dee; font-weight: bold; }
+
+/* 衣服 Emoji 樣式 */
+.forecast-outfit {
+    font-size: 1.5rem;
+    margin-top: 8px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+    cursor: help;
+}
+
+/* === 動畫 === */
+@keyframes popUp {
+    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}

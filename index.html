@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天穿什麼？(Weather & Wear)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎀 今天天氣如何？</h1>
+        
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="輸入城市 (例如: 台北)">
+            <button id="search-btn">查詢 ✨</button>
+        </div>
+
+        <div class="weather-card" id="weather-info" style="display: none;">
+            <h2 id="city-name">城市名稱</h2>
+            
+            <div class="weather-icon-container">
+                <img id="weather-icon" src="" alt="天氣圖示">
+            </div>
+
+            <div class="temp-box">
+                <span id="temperature">25</span>°C
+            </div>
+            <p id="description" class="weather-desc">晴天</p>
+            
+            <div class="outfit-box">
+                <h3>👚 穿搭小建議</h3>
+                <p id="outfit-text">載入中...</p>
+            </div>
+
+            <div class="forecast-section">
+                <h3>📅 未來 5 天預報</h3>
+                <div class="forecast-container" id="forecast-container">
+                    </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
